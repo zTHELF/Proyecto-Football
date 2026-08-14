@@ -19,49 +19,29 @@ const teams = [
   { name: "Real Sociedad", color: "#0067b1" },
   { name: "Sevilla", color: "#d2001c" },
   { name: "Valencia", color: "#ee8300" },
-].map(t => ({ ...t, j: 0, g: 0, e: 0, p: 0, gf: 0, gc: 0, dif: 0, pts: 0 }));
+];
 
 function initials(name) {
   return name.replace("Real ", "R.").split(" ").map(w => w[0]).join("").slice(0, 3).toUpperCase();
 }
 
-let sortKey = null;
-let sortAsc = true;
-
 function render() {
-  const body = document.getElementById("standings-body");
-  body.innerHTML = "";
-  teams.forEach((t, i) => {
-    const tr = document.createElement("tr");
-    tr.innerHTML = `
-      <td>${i + 1}</td>
-      <td class="team-cell">
-        <span class="crest" style="background:${t.color};color:${t.color === "#ffffff" ? "#333" : "#fff"};border:${t.color === "#ffffff" ? "1px solid #ccc" : "none"}">${initials(t.name)}</span>
-        <a href="#">${t.name}</a>
-      </td>
-      <td>${t.j}</td><td>${t.g}</td><td>${t.e}</td><td>${t.p}</td>
-      <td>${t.gf}</td><td>${t.gc}</td><td>${t.dif}</td>
-      <td class="pts">${t.pts}</td>
+  const grid = document.getElementById("teams-grid");
+  grid.innerHTML = "";
+
+  teams.forEach(t => {
+    const card = document.createElement("div");
+    card.className = "team-card";
+
+    card.innerHTML = `
+      <span class="crest-lg" style="background:${t.color};color:${t.color === "#ffffff" ? "#333" : "#fff"};border:${t.color === "#ffffff" ? "1px solid #ccc" : "none"}">
+        ${initials(t.name)}
+      </span>
+      <span class="team-name">${t.name}</span>
     `;
-    body.appendChild(tr);
+
+    grid.appendChild(card);
   });
 }
-
-document.querySelectorAll("#standings-table thead th").forEach(th => {
-  th.addEventListener("click", () => {
-    const key = th.dataset.key;
-    if (key === "pos" || key === "team") return;
-    if (sortKey === key) {
-      sortAsc = !sortAsc;
-    } else {
-      sortKey = key;
-      sortAsc = false;
-    }
-    teams.sort((a, b) => (sortAsc ? a[key] - b[key] : b[key] - a[key]));
-    document.querySelectorAll("thead th").forEach(h => h.classList.remove("sorted"));
-    th.classList.add("sorted");
-    render();
-  });
-});
 
 render();
