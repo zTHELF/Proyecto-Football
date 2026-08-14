@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Posiciones LALIGA 2026-27 | ESPN Deportes</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="brand"><span class="logo-box">ESPN</span> DEPORTES</div>
+  <nav>
+    <a href="#">Fútbol</a>
+    <a href="#">MLB</a>
+    <a href="#">F. Americano</a>
+    <a href="#">Básquetbol</a>
+    <a href="#">WNBA</a>
+    <a href="#">F1</a>
+    <a href="#">Boxeo</a>
+    <a href="#">Más Deportes</a>
+  </nav>
+  <div class="right-icons">
+    <span>▶ Watch</span>
+    <span>▦ Juegos</span>
+    <span>🔍</span>
+    <span class="icon-circle">＋</span>
+  </div>
+</div>
+
+<div class="subnav">
+  <div class="futbol-label"><span class="ball"></span> Futbol</div>
+  <a href="#">Portada</a>
+  <a href="#">Resultados</a>
+  <a href="#">Calendario</a>
+  <a href="#">Equipos</a>
+  <a href="#" class="active">Posiciones</a>
+  <a href="#">Altas y bajas</a>
+</div>
+
+<div class="page">
+  <div class="main-panel">
+    <h1 class="title">Posiciones de la LALIGA 2026-27</h1>
+    <div class="selectors">
+      <select id="league-select"><option>LALIGA</option></select>
+      <select id="season-select"><option>2026-27</option></select>
+    </div>
+    <h2 class="league-name">LALIGA</h2>
+    <table id="standings-table">
+      <thead>
+        <tr>
+          <th data-key="pos">2026/2027</th>
+          <th data-key="team"></th>
+          <th data-key="j"><u>J</u></th>
+          <th data-key="g"><u>G</u></th>
+          <th data-key="e"><u>E</u></th>
+          <th data-key="p"><u>P</u></th>
+          <th data-key="gf"><u>GF</u></th>
+          <th data-key="gc"><u>GC</u></th>
+          <th data-key="dif"><u>DIF</u></th>
+          <th data-key="pts"><u>PTS</u></th>
+        </tr>
+      </thead>
+      <tbody id="standings-body"></tbody>
+    </table>
+  </div>
+
+  <div class="sidebar">
+    <h3>Noticias - LALIGA</h3>
+    <div class="news-item">
+      <div class="news-thumb" style="background:linear-gradient(135deg,#1f3a63,#0b1c33);"></div>
+      <div>
+        <h4><a href="#">Los pronósticos de SportsCenter para el arranque de la liga española</a></h4>
+        <p>José del Valle elige a su Top-5 de candidatos al campeón de La Liga de las Estrellas.</p>
+        <span class="time">1h</span>
+      </div>
+    </div>
+    <div class="news-item">
+      <div class="news-thumb" style="background:linear-gradient(135deg,#8a1f2b,#3a0d12);"></div>
+      <div>
+        <h4><a href="#">Los mejores fichajes de LaLiga para la temporada 2026-27</a></h4>
+        <p>Adeyemi, Diomandé, Gordon, Aubameyang y otros se suman a la liga española.</p>
+        <span class="time">1h</span>
+      </div>
+    </div>
+    <div class="news-item">
+      <div class="news-thumb" style="background:linear-gradient(135deg,#2f6b3c,#123a1c);"></div>
+      <div>
+        <h4><a href="#">Sin Julián, Llorente ni Baena, el Atleti gana su último amistoso</a></h4>
+        <p>Gemma Soler con su análisis del triunfo colchonero sobre el Olympique de Marsella por 2 a 1 en el último amistoso.</p>
+        <span class="time">2h</span>
+      </div>
+    </div>
+    <a href="#" class="see-more">Noticias LALIGA ›</a>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
