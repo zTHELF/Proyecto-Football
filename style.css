@@ -11,8 +11,28 @@ body{font-family:Helvetica,Arial,sans-serif;background:#f2f2f2;color:var(--text-
 a{color:var(--link-blue);text-decoration:none;}
 a:hover{text-decoration:underline;}
 
-.main-panel{background:#fff;border:1px solid var(--border-gray);padding:22px;max-width:900px;margin:20px auto;}
+.topbar{background:var(--espn-red);display:flex;align-items:center;height:46px;padding:0 16px;color:#fff;gap:22px;font-size:13px;font-weight:700;overflow-x:auto;white-space:nowrap;}
+.topbar .brand{display:flex;align-items:center;gap:6px;font-style:italic;font-size:18px;margin-right:12px;}
+.topbar .brand .logo-box{background:#fff;color:var(--espn-red);font-style:italic;font-weight:900;padding:2px 4px;border-radius:2px;font-size:14px;}
+.topbar nav{display:flex;gap:20px;flex:1;}
+.topbar nav a{color:#fff;font-weight:600;}
+.topbar .right-icons{display:flex;align-items:center;gap:16px;margin-left:auto;}
+.icon-circle{width:18px;height:18px;border-radius:50%;border:2px solid #fff;display:inline-flex;align-items:center;justify-content:center;}
+
+.subnav{background:#fff;border-bottom:1px solid var(--border-gray);display:flex;align-items:center;padding:0 16px;height:44px;gap:26px;overflow-x:auto;white-space:nowrap;}
+.subnav .futbol-label{display:flex;align-items:center;gap:8px;font-weight:800;font-size:15px;margin-right:10px;}
+.ball{width:20px;height:20px;border-radius:50%;background:radial-gradient(circle at 35% 30%, #fff 0 30%, #222 31% 100%);border:1px solid #444;}
+.subnav a{color:var(--text-dark);font-size:14px;font-weight:600;padding:12px 2px;border-bottom:3px solid transparent;}
+.subnav a.active{color:var(--espn-red);border-bottom:3px solid var(--espn-red);}
+.subnav a:hover{text-decoration:none;color:var(--espn-red);}
+
+.page{max-width:1200px;margin:20px auto;padding:0 16px;display:grid;grid-template-columns:1fr 300px;gap:20px;align-items:start;}
+.main-panel{background:#fff;border:1px solid var(--border-gray);padding:22px;}
 h1.title{font-size:22px;font-weight:800;margin-bottom:14px;}
+
+.selectors{display:flex;gap:10px;margin-bottom:16px;}
+.selectors select{appearance:none;background:#fff;border:1px solid #ccc;border-radius:16px;padding:6px 30px 6px 14px;font-size:13px;font-weight:700;cursor:pointer;}
+
 h2.league-name{font-size:17px;font-weight:800;margin-bottom:8px;}
 
 table{width:100%;border-collapse:collapse;font-size:13.5px;}
@@ -28,3 +48,20 @@ tbody td:first-child{text-align:left;color:var(--text-gray);font-weight:600;widt
 tbody td.team-cell{text-align:left;display:flex;align-items:center;gap:10px;}
 .crest{width:22px;height:22px;border-radius:50%;flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;font-size:9px;font-weight:800;color:#fff;}
 tbody td.pts{font-weight:800;}
+
+.sidebar{background:#fff;border:1px solid var(--border-gray);padding:18px;}
+.sidebar h3{font-size:16px;font-weight:800;padding-bottom:12px;border-bottom:1px solid var(--border-gray);margin-bottom:14px;}
+.news-item{display:flex;gap:12px;padding-bottom:14px;margin-bottom:14px;border-bottom:1px solid var(--border-gray);}
+.news-item:last-of-type{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.news-thumb{width:76px;height:52px;flex:0 0 auto;border-radius:2px;background-size:cover;background-position:center;}
+.news-item h4{font-size:13.5px;font-weight:700;line-height:1.3;margin-bottom:4px;}
+.news-item h4 a{color:var(--text-dark);}
+.news-item p{font-size:12px;color:var(--text-gray);line-height:1.35;}
+.news-item .time{display:block;font-size:11px;color:#999;margin-top:4px;}
+.see-more{display:block;font-weight:700;font-size:13px;margin-top:14px;}
+
+@media (max-width:860px){
+  .page{grid-template-columns:1fr;}
+  table{font-size:12px;}
+  thead th, tbody td{padding:7px 5px;}
+}
